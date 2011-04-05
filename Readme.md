@@ -13,10 +13,10 @@
 
  Options:
 
-    - `from` sender email
-    - `timeout` sendmail timeout in milliseconds
-    - `subject` defaulting to " cluster({worker}) exception: {message}"
-    - `template` function called with local variables (usually jade / ejs template etc)
+  - `from` sender email
+  - `timeout` sendmail timeout in milliseconds
+  - `subject` defaulting to " cluster({worker}) exception: {message}"
+  - `template` function called with local variables (usually jade / ejs template etc)
 
 ## Example
 
