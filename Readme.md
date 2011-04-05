@@ -3,6 +3,38 @@
 
   Email notification plugin for Cluster
 
+## Installation
+
+    $ npm install cluster-mail
+
+## Usage
+
+ Initialize mail plugin with the given `email(s)`, with the given `options`.
+
+ Options:
+
+    - `from` sender email
+    - `timeout` sendmail timeout in milliseconds
+    - `subject` defaulting to " cluster({worker}) exception: {message}"
+    - `template` function called with local variables (usually jade / ejs template etc)
+
+## Example
+
+    var http = require('http')
+      , cluster = require('cluster')
+      , mail = require('cluster-mail');
+
+    var server = http.createServer(function(req, res){
+      if (Math.random() > 0.9) throw new Error('fail!');
+      res.end('Hello World');
+    });
+
+    cluster(server)
+      .use(mail('your@email.com', { from: 'me@somewhere.com' }))
+      .use(mail(['or@a-bunch.com', 'of@emails-here.com']))
+      .listen(3000);
+
+
 ## License 
 
 (The MIT License)
