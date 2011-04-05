@@ -1,0 +1,10 @@
+{
+    "name": "cluster-mail"
+  , "version": "0.0.1"
+  , "description": "Email notification plugin for Cluster"
+  , "keywords": []
+  , "author": "TJ Holowaychuk <tj@learnboost.com>"
+  , "dependencies": {}
+  , "main": "index"
+  , "engines": { "node": "0.4.x" }
+}
