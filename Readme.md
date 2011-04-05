@@ -36,7 +36,7 @@
 
 ## Screenshot
 
-![](http://cl.ly/5l6G/Screenshot.png)
+![](http://f.cl.ly/items/0K0F3t1s2o172b0j2407/Screenshot.png)
 
 ## License 
 
