@@ -34,6 +34,9 @@
       .use(mail(['or@a-bunch.com', 'of@emails-here.com']))
       .listen(3000);
 
+## Screenshot
+
+![](http://cl.ly/5l6G/Screenshot.png)
 
 ## License 
 
