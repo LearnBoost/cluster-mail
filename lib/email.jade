@@ -6,6 +6,15 @@ html
       - if (data)
         table
           - each val, key in data
-            tr
-              td(style='color: #222; font-weight: bold')= key
-              td(style='color: #444;')= val
+            tr(style='padding: 5px 0;')
+              td(style='vertical-align: top; color: #222; font-weight: bold')= key
+              - if (val && 'object' == typeof val)
+                td
+                  table
+                    - each v, k in val
+                      tr
+                        td(style='color: #444;')= k
+                        td(style='color: #444;')= v
+              - else
+                td(style='color: #444;')= val
+              

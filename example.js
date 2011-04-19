@@ -17,7 +17,7 @@ var server = http.createServer(function(req, res){
   } catch (err) {
     // we can also optionally send an arbitrary json object
     // for use within our template
-    var data = { method: req.method, url: req.url };
+    var data = { method: req.method, url: req.url, headers: req.headers };
     cluster.mailException(err, data);
     console.log('sent %s', err.message);
   }
