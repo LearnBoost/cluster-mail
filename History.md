@@ -1,4 +1,11 @@
 
+0.1.0 / 2011-04-19 
+==================
+
+  * Added arbitrary details display (request url, method, headers, etc)
+  * Added `cluster.mailException()` for workers
+  * Added `send()` helper function
+
 0.0.2 / 2011-04-05 
 ==================
 
