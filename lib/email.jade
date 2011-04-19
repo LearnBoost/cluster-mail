@@ -6,7 +6,7 @@ html
       - if (data)
         table
           - each val, key in data
-            tr(style='padding: 5px 0;')
+            tr(style='padding: 15px 0;')
               td(style='vertical-align: top; color: #222; font-weight: bold')= key
               - if (val && 'object' == typeof val)
                 td
