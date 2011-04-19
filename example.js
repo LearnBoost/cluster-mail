@@ -22,6 +22,6 @@ if (cluster.isWorker) {
     // to notify master of an exception that was not uncaught
     console.log('timed out');
     var err = new Error('timeout!');
-    cluster.call('mailException', err);
+    cluster.mailException(err);
   }, 5000);
 }
