@@ -12,6 +12,16 @@ var server = http.createServer(function(req, res){
   res.end('Hello World');
 });
 
-cluster(server)
+cluster = cluster(server)
   .use(mail('tjholowayhuk@gmail.com'))
   .listen(3000);
+
+if (cluster.isWorker) {
+  setTimeout(function(){
+    // we can use cluster.call() from within a worker
+    // to notify master of an exception that was not uncaught
+    console.log('timed out');
+    var err = new Error('timeout!');
+    cluster.call('mailException', err);
+  }, 5000);
+}
