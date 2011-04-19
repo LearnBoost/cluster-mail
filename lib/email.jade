@@ -3,3 +3,9 @@ html
     #contents(style='background: #fff; border: 1px solid #eee; padding: 15px 30px; -webkit-border-radius: 15px;')
       h1(style='color: #222; font-size: 20px;') Worker ##{worker.id} exception
       pre(style='color: #444; font-size: 12px;')= error.stack
+      - if (data)
+        table
+          - each val, key in data
+            tr
+              td(style='color: #222; font-weight: bold')= key
+              td(style='color: #444;')= val
