@@ -34,6 +34,21 @@
       .use(mail(['or@a-bunch.com', 'of@emails-here.com']))
       .listen(3000);
 
+## Manual Reporting Example
+
+  Often it is useful to report an exception within a worker that was caught, thus never terminating the process, in turn never notifying cluster's master process. An example of this would be within a connect or express error handler, where you simply responded with an error page, however you still want to be notified via mail.
+
+  To do this we invoke the `mailException()` method with the error, as well as an optional object containing additional data to display in the email. This may include request information, user information etc. 
+
+      // somewhere in your application
+      var data = { method: req.method, url: req.url };
+      cluster.mailException(err, data);
+
+      // start the server
+      cluster = cluster(server)
+        .use(mail(['dev@learnboost.com', 'errors@learnboost.com']))
+        .listen(3000);
+
 ## Screenshot
 
 ![](http://f.cl.ly/items/0K0F3t1s2o172b0j2407/Screenshot.png)
