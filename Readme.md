@@ -29,10 +29,20 @@
       res.end('Hello World');
     });
 
-    cluster(server)
+    cluster = cluster(server)
       .use(mail('your@email.com', { from: 'me@somewhere.com' }))
       .use(mail(['or@a-bunch.com', 'of@emails-here.com']))
       .listen(3000);
+
+ By default cluster-mail can only notify uncaughtExceptions, however it is typically a good idea to do so from within your application's error handler as well. Below we invoke `cluster.mailException()`, where `cluster` is the return value of `cluster(server)`. We can pass an object containing data to add to the report, such as the authenticated user's id, email, request data, etc.
+ 
+     app.error(function(err, req, res, next){
+       cluster.mailException(err, {
+           method: req.method
+         , url: req.url
+         , headers: req.headers
+       });
+     });
 
 ## Manual Reporting Example
 
