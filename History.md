@@ -1,4 +1,9 @@
 
+0.1.1 / 2011-05-16 
+==================
+
+  * Fixed bug causing several of the same subject
+
 0.1.0 / 2011-04-19 
 ==================
 
