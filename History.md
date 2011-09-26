@@ -1,4 +1,9 @@
 
+0.1.2 / 2011-09-26
+==================
+
+    * Fixed; calling mailException from worker before worker recieves connect event
+
 0.1.1 / 2011-05-16 
 ==================
 
