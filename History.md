@@ -1,4 +1,9 @@
 
+0.1.3 / 2011-10-03
+==================
+
+  * fixed; stopped sending same subject line for every email
+
 0.1.2 / 2011-09-26
 ==================
 
