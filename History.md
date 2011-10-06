@@ -1,4 +1,9 @@
 
+0.1.4 / 2011-10-06
+==================
+
+  * fixed; pass along the worker so id displays in subject line
+
 0.1.3 / 2011-10-03
 ==================
 
